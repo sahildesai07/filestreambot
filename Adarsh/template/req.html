@@ -1,82 +1,121 @@
-<!--(c) adarsh-goel-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta property="og:image" content="https://i.ibb.co/M8S0Zzj/live-streaming.png" itemprop="thumbnailUrl">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>%s</title>
-    <link rel="stylesheet" type='text/css' href="https://drive----google.com/uc?export=view&id=1pVLG4gZy7jdow3sO-wFS06aP_A9QX0O6">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css" />
-    
-        									 
-<style>
-      marquee{
-      font-size: 30px;
-      font-weight: 800;
-      color: Blue;
-      font-family: sans-serif;
-      }
-    </style>
-    <style>
-      marquee{
-      font-size: 30px;
-      font-weight: 800;
-      color: Blue;
-      font-family: sans-serif;
-      }
-    </style>
+    <!-- Add your meta tags, CSS, and other head content here -->
 </head>
-
 <body>
-	
-    <header>
-        <marquee bgcolor="#f7f305"
-<div class="toogle"></div>
-        <div id="file-name">
-            %s
+    <div class="justify-content-center align-items-center w-100 d-flex flex-wrap">
+        <div class="lg:w-9/12 lg:px-12 lg:py-4 w-full border border-danger wow animate__animated animate__fadeInLeft">
+            <video id="player" class="player" playsinline controls>
+                <source src="{{file_url}}" type="video/mp4">
+            </video>
         </div>
-</marquee>
-    </header>
-
-    <div class="container">
-        <tag src="%s" class="player"></tag>
     </div>
 
-    <footer>
-	    <center><h4>Video not playing ? possibly because your browser or the player doesn't support codec please download and watch :D</h4></center><p>
-	    <center><h2> <b>(c)</b> ADARSH GOEL</h2></center>
-	    
-    </footer>
-    <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
-	<script>
-        const controls = [
-              'play-large',
-              'rewind',
-              'play', 
-              'fast-forward', 
-              'progress', 
-              'current-time',
-              'duration',
-              'mute',
-              'volume',
-              'captions',
-              'settings',
-              'pip',
-              'airplay',
-              'download',
-              'fullscreen'
-            ];
-        document.addEventListener('DOMContentLoaded', () => {
-            const player = Plyr.setup('.player', { controls });
-        });
+    <!-- External video player section -->
+    <div class="justify-content-center align-items-center w-100 d-flex">
+        <div class="row d-flex w-100 justify-content-center align-items-center">
+            <div class="col-lg-7 col-12 d-flex justify-content-start align-items-center">
+                <p class="h4 px-2 mt-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-orange-600 font-bold mb-2">Play with...</p>
+            </div>
+            <div class="col-lg-6 col-10 d-flex justify-center items-center flex-wrap pb-3 gap-2 wow animate__animated animate__fadeIn">
+                <!-- VLC Player -->
+                <div onclick="vlc_player()" class="card card-body col-lg-3 col-5 bg-dark text-secondary text-center justify-content-center align-items-center hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__fadeInLeft">
+                    <!-- Add your SVG or icon for VLC Player here -->
+                    VLC Player
+                </div>
 
-        const body = document.querySelector('body');
-        const footer = document.querySelector('footer');
-        const toogle = document.querySelector('.toogle');
+                <!-- Mx Player -->
+                <div onclick="mx_player()" class="card card-body col-lg-3 col-5 bg-dark text-secondary text-center justify-content-center align-items-center hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__fadeInRight">
+                    <!-- Add your SVG or icon for Mx Player here -->
+                    Mx Player
+                </div>
+
+                <!-- Play-it -->
+                <div onclick="playit_player()" class="card card-body col-lg-3 col-5 bg-dark text-secondary text-center justify-content-center align-items-center hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__fadeInLeft">
+                    <!-- Add your SVG or icon for Play-it here -->
+                    Play-it
+                </div>
+
+                <!-- km Player -->
+                <div onclick="km_player()" class="card card-body col-lg-3 col-5 bg-dark text-secondary text-center justify-content-center align-items-center hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__fadeInRight">
+                    <!-- Add your SVG or icon for km Player here -->
+                    km Player
+                </div>
+
+                <!-- S Player -->
+                <div onclick="s_player()" class="card card-body col-lg-3 col-5 bg-dark text-secondary text-center jcc align-items-center hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__fadeInRight">
+                    <!-- Add your SVG or icon for S Player here -->
+                    S Player
+                </div>
+
+                <!-- HD Player(4K) -->
+                <div onclick="hd_player()" class="card card-body col-lg-3 col-5 bg-dark text-secondary text-center jcc align-items-center hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__fadeInRight">
+                    <!-- Add your SVG or icon for HD Player(4K) here -->
+                    HD Player(4K)
+                </div>
+
+                <!-- Download Now -->
+                <div onclick="lazyDownload()" class="col-lg-4 p-2 col-12 rounded-3xl bg-dark text-white text-center align-items-center hover:bg-gradient-to-r from-pink-500 to-violet-500 hover:shadow-md hover:shadow-gray-100 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__rubberBand">
+                    Download Now
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="justify-content-center align-items-center w-100 d-flex mb-3">
+        <div class="row d-flex w-100 justify-content-center align-items-center">
+            <div class="col-lg-7 col-12 d-flex justify-content-start align-items-center">
+                <p class="h4 px-2 mt-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-orange-600 font-bold mb-2">Description</p>
+            </div>
+            <div class="col-lg-6 col-10 d-flex justify-center items-center flex-wrap gap-2 wow animate__animated animate__fadeIn">
+                <p class="mt-4 mb-2 px-3 font-medium">
+                    Add your video description here.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to change the video player source -->
+    <script>
+        // Replace "{{file_url}}" with the actual URL of your video file
+        const videoPlayer = document.getElementById('player');
+        videoPlayer.src = "{{file_url}}"; // Replace with your video URL
+
+        // Function to change video player source to VLC
+        function vlc_player() {
+            videoPlayer.src = "{{vlc_url}}"; // Replace with your VLC video URL
+        }
+
+        // Function to change video player source to Mx Player
+        function mx_player() {
+            videoPlayer.src = "{{mx_url}}"; // Replace with your Mx Player video URL
+        }
+
+        // Function to change video player source to Play-it
+        function playit_player() {
+            videoPlayer.src = "{{playit_url}}"; // Replace with your Play-it video URL
+        }
+
+        // Function to change video player source to km Player
+        function km_player() {
+            videoPlayer.src = "{{km_url}}"; // Replace with your km Player video URL
+        }
+
+        // Function to change video player source to S Player
+        function s_player() {
+            videoPlayer.src = "{{s_url}}"; // Replace with your S Player video URL
+        }
+
+        // Function to change video player source to HD Player(4K)
+        function hd_player() {
+            videoPlayer.src = "{{hd_url}}"; // Replace with your HD Player(4K) video URL
+        }
+
+        // Function to trigger the download
+        function lazyDownload() {
+            // Add logic to trigger the download here
+        }
     </script>
 </body>
 </html>
