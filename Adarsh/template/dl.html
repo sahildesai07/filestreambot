@@ -1,4 +1,4 @@
-<!-- (c) ADARSH GOEL -->
+<!-- (c) adarsh-goel-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,60 +7,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>%s</title>
-    <link rel="stylesheet" type="text/css" href="https://drive.google.com/uc?export=view&id=1pVLG4gZy7jdow3sO-wFS06aP_A9QX0O6">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        header {
+            background-color: #f7f305;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .cyber {
+            font-family: 'Delius', cursive;
+            font-size: 24px;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cybr-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .cybr-btn:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h4 {
+            color: #ff0000;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <marquee>
+            <div class="toogle"></div>
+            <div id="file-name" class="cyber">
+                %s
+            </div>
+        </marquee>
+    </header>
 
-<header>
-    <marquee bgcolor="#f7f305">
-        <div class="toggle"></div>
-        <div id="file-name" class="cyber">
-            %s
-        </div>
-    </marquee>
-</header>
+    <div class="container">
+        <a href=%s>
+            <button class="cybr-btn">
+                Download
+                <span aria-hidden>_</span>
+                <span aria-hidden class="cybr-btn__glitch">_404 Error</span>
+                <span aria-hidden class="cybr-btn__tag">_%s</span>
+            </button>
+        </a>
+        <a href="vlc://your-stream-url">
+            <button class="cybr-btn">
+                Play in VLC
+            </button>
+        </a>
+    </div>
 
-<div class="container">
-    <a href="%s">
-        <button class="cybr-btn">
-            Download
-            <span aria-hidden="_"></span>
-            <span aria-hidden class="cybr-btn__glitch">_404 Error</span>
-            <span aria-hidden class="cybr-btn__tag">_%s</span>
-        </button>
-    </a>
-</div>
+    <footer>
+        <h4>Video not playing? Possibly because your browser or the player doesn't support the codec. Please download and watch :D</h4>
+        <h2><b>(c) Ultroidofficial</b></h2>
+    </footer>
+    <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
+    <script>
+        const controls = [
+            'play-large',
+            'rewind',
+            'play',
+            'fast-forward',
+            'progress',
+            'current-time',
+            'duration',
+            'mute',
+            'volume',
+            'captions',
+            'settings',
+            'pip',
+            'airplay',
+            'download',
+            'fullscreen'
+        ];
+        document.addEventListener('DOMContentLoaded', () => {
+            const player = Plyr.setup('.player', { controls });
+        });
 
-<footer>
-    <center><h4>Video not playing? Possibly because your browser or the player doesn't support the codec. Please download and watch :D</h4></center>
-    <center><h2><b>(c) Ultroidofficial</b></h2></center>
-</footer>
-
-<script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
-<script>
-    const controls = [
-        'play-large',
-        'rewind',
-        'play',
-        'fast-forward',
-        'progress',
-        'current-time',
-        'duration',
-        'mute',
-        'volume',
-        'captions',
-        'settings',
-        'pip',
-        'airplay',
-        'download',
-        'fullscreen'
-    ];
-    document.addEventListener('DOMContentLoaded', () => {
-        const player = Plyr.setup('.player', { controls });
-    });
-</script>
-
+        const body = document.querySelector('body');
+        const title = document.querySelector('#file-name');
+        const footer = document.querySelector('footer');
+        const toogle = document.querySelector('.toogle');
+    </script>
 </body>
 </html>
