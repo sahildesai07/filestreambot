@@ -1,4 +1,4 @@
-<!--(c) adarsh-goel-->
+<!--(c) Ultroidofficial-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +12,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css" />
     
-    <style>
-        marquee {
-            font-size: 30px;
-            font-weight: 800;
-            color: Blue;
-            font-family: sans-serif;
-        }
-    </style>
+<style>
+    marquee {
+        font-size: 30px;
+        font-weight: 800;
+        color: Blue;
+        font-family: sans-serif;
+    }
+</style>
+
 </head>
 
 <body>
+    
     <header>
         <marquee bgcolor="#f7f305">
             <div class="toogle"></div>
@@ -33,23 +35,13 @@
     </header>
 
     <div class="container">
-        <div class="player">
-            <!-- VLC Player Code -->
-            <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" width="640" height="360" id="vlc" loop="no" autoplay="yes" target="%s"></embed>
-        </div>
+        <tag src="%s" class="player"></tag>
     </div>
 
-    <!-- Opening Link -->
-    <a href="%s" target="_blank">Open in VLC</a>
-
-    <!-- Button to Trigger VLC Playback -->
-    <button onclick="playInVLC()">Play in VLC</button>
-
     <footer>
-        <center><h4>Video not playing? Possibly because your browser or the player doesn't support the codec. Please download and watch :D</h4></center><p>
-        <center><h2><b>(c)</b> ADARSH GOEL</h2></center>
+        <center><h4>Video not playing? Possibly because your browser or the player doesn't support codec. Please download and watch :D</h4></center><p>
+        <center><h2> <b>(c)</b> Ultroidofficial</h2></center>
     </footer>
-
     <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
     <script>
         const controls = [
@@ -69,7 +61,6 @@
             'download',
             'fullscreen'
         ];
-
         document.addEventListener('DOMContentLoaded', () => {
             const player = Plyr.setup('.player', { controls });
         });
@@ -77,12 +68,6 @@
         const body = document.querySelector('body');
         const footer = document.querySelector('footer');
         const toogle = document.querySelector('.toogle');
-
-        // Function to open video in VLC
-        function playInVLC() {
-            const vlcLink = '%s'; // Replace with the actual video URL
-            window.open(vlcLink, '_blank');
-        }
     </script>
 </body>
 </html>
